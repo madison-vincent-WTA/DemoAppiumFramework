@@ -12,7 +12,7 @@ public class firstTests extends baseClass {
         // We are using the capabilities() method made in our baseClass to ensure we have access to the DesiredCapabilities we need
         AndroidDriver<AndroidElement> driver = capabilities();
 
-        //Start adding tests now! yay!
+        driver.findElementByXPath("//android.widget.TextView[@text='Accessibility']").click();
 
     }
 
