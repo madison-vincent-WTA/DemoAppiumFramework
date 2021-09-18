@@ -4,14 +4,14 @@ import org.testng.annotations.DataProvider;
 
 public class TestData {
 
-	@DataProvider(name="InputData")
+	@DataProvider(name="ClickTestData")
 	public Object[][] getDataforEditField()
 	{
 		//2 sets of data, "hello" , "!@#$$"
 		Object[][] obj=new Object[][]
 				{
 			
-			{"hello"}, {"@#$%"}
+			{"Accessibility"}
 				};
 				
 				return obj;
