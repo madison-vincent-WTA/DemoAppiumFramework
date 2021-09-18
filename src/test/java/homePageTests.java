@@ -8,6 +8,7 @@ import org.testng.annotations.Test;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
+import pageObjects.HomePage;
 
 
 public class homePageTests extends Base {
@@ -24,7 +25,14 @@ public class homePageTests extends Base {
     @Test (dataProvider="ClickTestData",dataProviderClass= TestData.class)
     public void clickTest(String obj) {
         driver.findElementByXPath("//android.widget.TextView[@text='"+obj+"']").click();
-        // add to pabe objects as an example
+        // an example of using a data provider
+
+    }
+
+    @Test
+    public void clickTest2() {
+        HomePage.getTextButton().click();
+        // an example of using page objects correctly
 
     }
 
