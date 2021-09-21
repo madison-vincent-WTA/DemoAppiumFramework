@@ -7,15 +7,12 @@ public class TestData {
 	@DataProvider(name="ClickTestData")
 	public Object[][] getDataforEditField()
 	{
-		//2 sets of data, "hello" , "!@#$$"
+		//You can store many values here as an array
 		Object[][] obj=new Object[][]
 				{
-			
 			{"Accessibility"}
 				};
-				
 				return obj;
-				
 	}
 
 }
