@@ -18,4 +18,6 @@ public class AssertionLogging extends SoftAssert {
                         assertCommand.getExpected().toString(), assertCommand.getActual().toString());
         System.err.println(assertCommand.getMessage() + " <FAILED>. " + suffix);
     }
+
+
 }

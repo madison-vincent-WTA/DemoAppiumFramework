@@ -9,16 +9,17 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.*;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.remote.MobileCapabilityType;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
 
-public class Base {
+public class AndroidBase {
     public static AppiumDriverLocalService service;
     public static AndroidDriver<AndroidElement>  driver;
     public static AssertionLogging softAssert = new AssertionLogging();
@@ -88,6 +89,28 @@ public class Base {
     {
         File scrfile=	((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
         FileUtils.copyFile(scrfile,new File(System.getProperty("user.dir")+"\\"+s+".png"));
+    }
+
+    public static WebElement waitForElement(WebElement element, int timoutSec, int pollingSec) {
+
+        FluentWait<WebDriver> fWait = new FluentWait<WebDriver>(driver).withTimeout(timoutSec, TimeUnit.SECONDS)
+                .pollingEvery(pollingSec, TimeUnit.SECONDS)
+                .ignoring(NoSuchElementException.class, TimeoutException.class).ignoring(StaleElementReferenceException.class);
+
+        for (int i = 0; i < 2; i++) {
+            try {
+                fWait.until(ExpectedConditions.visibilityOf(element));
+                fWait.until(ExpectedConditions.elementToBeClickable(element));
+            } catch (Exception e) {
+
+                System.out.println("Element Not found trying again - " + element.toString().substring(70));
+                e.printStackTrace();
+
+            }
+        }
+
+        return element;
+
     }
 
 }

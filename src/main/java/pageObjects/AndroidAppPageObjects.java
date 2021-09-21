@@ -1,13 +1,16 @@
 package pageObjects;
 
-import com.Framework.Base;
+import com.Framework.AndroidBase;
 import org.openqa.selenium.WebElement;
 
-public class AndroidAppPageObjects extends Base {
+public class AndroidAppPageObjects extends AndroidBase {
 
-	public static WebElement getTextButton() {
-		WebElement element = driver.findElementByXPath("//android.widget.TextView[@text='Accessibility Node Provider']");
-		return element;
+	public static String getButtonText(String desc) {
+		String xpath = "//android.widget.TextView[@text='"+desc+"']";
+		waitForElement(driver.findElementByXPath(xpath), 10, 1);
+		WebElement element = driver.findElementByXPath(xpath);
+		String text = element.getText();
+		return text;
 	}
 
 }
