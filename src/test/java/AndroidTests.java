@@ -6,10 +6,10 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
-import pageObjects.HomePage;
+import pageObjects.AndroidAppPageObjects;
 
 
-public class HomePageTests extends Base {
+public class AndroidTests extends Base {
 
 
     @BeforeTest
@@ -20,16 +20,17 @@ public class HomePageTests extends Base {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
-    @Test (dataProvider="ClickTestData",dataProviderClass= TestData.class)
+    @Test (dataProvider= "getButton",dataProviderClass= TestData.class)
     public void clickTest(String obj) {
         driver.findElementByXPath("//android.widget.TextView[@text='"+obj+"']").click();
         // an example of using a data provider
+        softAssert.assertEquals("a", "e", "m");
 
     }
 
     @Test
     public void clickTest2() {
-        HomePage.getTextButton().click();
+        AndroidAppPageObjects.getTextButton().click();
         // an example of using page objects correctly
 
     }

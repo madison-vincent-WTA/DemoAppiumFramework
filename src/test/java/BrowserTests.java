@@ -1,20 +1,20 @@
 import com.Framework.BrowserBase;
-import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.android.AndroidElement;
+import com.Framework.TestData;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
-import java.net.MalformedURLException;
 
 public class BrowserTests extends BrowserBase {
 
-    @Test
-    public void testName() throws IOException, InterruptedException {
-       WebDriver driver = capabilities("chrome");
-
+    @Test (dataProvider= "BrowserTestData",dataProviderClass= TestData.class)
+    public void testName(String expected) throws IOException, InterruptedException {
+        WebDriver driver = capabilities("chrome");
        driver.get("https://linkedin.com");
+       chrome.getHomeButton().click();
 
+        softAssert.assertEquals(chrome.getWelcomeMessage(), expected, "Checking the welcome message");
 
+        softAssert.assertAll();
     }
 }

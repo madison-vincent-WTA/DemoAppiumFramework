@@ -21,6 +21,7 @@ import io.appium.java_client.service.local.AppiumDriverLocalService;
 public class Base {
     public static AppiumDriverLocalService service;
     public static AndroidDriver<AndroidElement>  driver;
+    public static AssertionLogging softAssert = new AssertionLogging();
 
     public AppiumDriverLocalService startServer()
     {

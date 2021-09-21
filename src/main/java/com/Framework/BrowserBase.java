@@ -5,12 +5,15 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.remote.MobileCapabilityType;
 import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
+import pageObjects.ChromePageObjects;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -19,8 +22,13 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 
 public class BrowserBase {
+
+    public static RemoteWebDriver driver;
+    public static AssertionLogging softAssert = new AssertionLogging();
+    public static ChromePageObjects chrome = new ChromePageObjects();
 
     public static WebDriver capabilities(String browserName) throws IOException {
 
@@ -33,9 +41,31 @@ public class BrowserBase {
         capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
         capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "11.0");
 
-        WebDriver driver = new RemoteWebDriver(new URL("http://192.168.50.58:4723/wd/hub"), capabilities);
+        driver = new RemoteWebDriver(new URL("http://192.168.50.58:4723/wd/hub"), capabilities);
 
         return driver;
+    }
+
+    public static WebElement waitForElement(WebElement element, int timoutSec, int pollingSec) {
+
+        FluentWait<WebDriver> fWait = new FluentWait<WebDriver>(driver).withTimeout(timoutSec, TimeUnit.SECONDS)
+                .pollingEvery(pollingSec, TimeUnit.SECONDS)
+                .ignoring(NoSuchElementException.class, TimeoutException.class).ignoring(StaleElementReferenceException.class);
+
+        for (int i = 0; i < 2; i++) {
+            try {
+                fWait.until(ExpectedConditions.visibilityOf(element));
+                fWait.until(ExpectedConditions.elementToBeClickable(element));
+            } catch (Exception e) {
+
+                System.out.println("Element Not found trying again - " + element.toString().substring(70));
+                e.printStackTrace();
+
+            }
+        }
+
+        return element;
+
     }
 
 }
