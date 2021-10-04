@@ -25,12 +25,14 @@ public class AndroidTests extends AndroidBase {
     }
 
     @Test (dataProvider= "ClickTestData",dataProviderClass= AllTestData.class)
-    public void clickTest(String buttonName, String desc, String buttonText, String message) {
+    public void checkButtonFunction(String buttonName, String desc, String buttonText, String message) throws InterruptedException {
+        Thread.sleep(3000);
         WebElement element = driver.findElementByXPath("//android.widget.TextView[@content-desc='"+buttonName+"']");
         element.click();
+        Thread.sleep(3000);
         softAssert.assertEquals(android.getButtonText(desc), buttonText, message);
         driver.pressKey(new KeyEvent(AndroidKey.BACK));
-
+        Thread.sleep(3000);
         softAssert.assertAll();
     }
 // Above is a great example of using both page objects and data providers

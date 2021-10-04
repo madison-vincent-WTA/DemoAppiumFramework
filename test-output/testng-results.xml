@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
+  <reporter-output>
+  </reporter-output>
+  <suite name="All Test Suite" duration-ms="60968" started-at="2021-09-28T12:29:56 MDT" finished-at="2021-09-28T12:30:57 MDT">
+    <groups>
+    </groups>
+    <test name="All Tests" duration-ms="60968" started-at="2021-09-28T12:29:56 MDT" finished-at="2021-09-28T12:30:57 MDT">
+      <class name="IOSTests">
+        <test-method status="PASS" signature="clickAlertViews()[pri:0, instance:IOSTests@730d2164]" name="clickAlertViews" duration-ms="13193" started-at="2021-09-28T12:30:44 MDT" finished-at="2021-09-28T12:30:57 MDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickAlertViews -->
+      </class> <!-- IOSTests -->
+      <class name="BrowserTests">
+        <test-method status="PASS" signature="checkWelcomeMessage(java.lang.String)[pri:0, instance:BrowserTests@33f88ab]" name="checkWelcomeMessage" duration-ms="17272" started-at="2021-09-28T12:30:27 MDT" data-provider="BrowserTestData" finished-at="2021-09-28T12:30:44 MDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Welcome to your professional community]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkWelcomeMessage -->
+      </class> <!-- BrowserTests -->
+      <class name="AndroidTests">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:AndroidTests@15d0c81b]" name="beforeTest" is-config="true" duration-ms="8869" started-at="2021-09-28T12:29:56 MDT" finished-at="2021-09-28T12:30:05 MDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method status="PASS" signature="checkButtonFunction(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:AndroidTests@15d0c81b]" name="checkButtonFunction" duration-ms="10850" started-at="2021-09-28T12:30:05 MDT" data-provider="ClickTestData" finished-at="2021-09-28T12:30:16 MDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Accessibility]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Accessibility Node Provider]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Accessibility Node Provider]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Checking Accessibility Button]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkButtonFunction -->
+        <test-method status="PASS" signature="checkButtonFunction(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:AndroidTests@15d0c81b]" name="checkButtonFunction" duration-ms="10749" started-at="2021-09-28T12:30:16 MDT" data-provider="ClickTestData" finished-at="2021-09-28T12:30:27 MDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Animation]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Bouncing Balls]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Bouncing Balls]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Checking Animation Button]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkButtonFunction -->
+      </class> <!-- AndroidTests -->
+    </test> <!-- All Tests -->
+  </suite> <!-- All Test Suite -->
+</testng-results>

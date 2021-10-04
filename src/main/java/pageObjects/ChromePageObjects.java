@@ -19,7 +19,7 @@ public class ChromePageObjects extends BrowserBase {
     }
 
     public static String getWelcomeMessage() {
-        String xpath = "//h1[@class='hero__headline hero__headline--basic hero__headline--non-blue']";
+        String xpath = "//h1[@class='hero__headline hero__headline--basic']";
         waitForElement(driver.findElementByXPath(xpath), 10, 1);
         WebElement welcomeMessage = driver.findElementByXPath(xpath);
         String text = welcomeMessage.getText();

@@ -68,7 +68,7 @@ public class AndroidBase {
         File appDir = new File("/Users/madison.vincent/IdeaProjects/DemoFramework/src/main/resources/");
         File app = new File(appDir, (String) prop.get(appName));
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        String device=(String) prop.get("device");
+        String device=(String) prop.get("androiddevice");
 
         if(device.contains("emulator"))
         {

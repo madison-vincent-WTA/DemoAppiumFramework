@@ -3,35 +3,34 @@ import org.testng.ITestListener;
 import org.testng.ITestResult;
 
 //ITestListener interface which implements Testng listeners
+
+// Not being used for the moment
 public class Listeners implements ITestListener {
 
 	@Override
 	public void onTestStart(ITestResult result) {
-		// TODO Auto-generated method stub
+		System.out.println("Starting Test "+ result.getTestName()+"");
 
 	}
 
 	@Override
 	public void onTestSuccess(ITestResult result) {
-		// TODO Auto-generated method stub
-
-		//	System.out.println("I successfully executed Listeners Pass code");
+		System.out.println(""+result.getTestName()+" has passed");
 	}
 
 	@Override
 	public void onTestFailure(ITestResult result) {
-		// TODO Auto-generated method stub
 		//screenshot code
 		//response if API is failed
 
-		System.out.println("I failed executed Listeners Pass code" +result.getName());
+		System.out.println(""+result.getTestName()+" has failed");
 
 	}
 
 	@Override
 	public void onTestSkipped(ITestResult result) {
 		// TODO Auto-generated method stub
-
+		System.out.println(""+result.getTestName()+" was skipped");
 	}
 
 	@Override
