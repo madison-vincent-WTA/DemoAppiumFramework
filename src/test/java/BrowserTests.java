@@ -9,7 +9,7 @@ public class BrowserTests extends BrowserBase {
 
     @Test (dataProvider= "BrowserTestData",dataProviderClass= AllTestData.class)
     public void checkWelcomeMessage(String expected) throws IOException, InterruptedException {
-        WebDriver driver = capabilities("chrome");
+        WebDriver driver = capabilities();
        driver.get("https://linkedin.com");
        Thread.sleep(3000);
        chrome.getHomeButton().click();

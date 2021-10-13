@@ -9,16 +9,18 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.asserts.SoftAssert;
 
+import java.net.MalformedURLException;
+
 public class ChromePageObjects extends BrowserBase {
 
-    public static WebElement getHomeButton() {
+    public static WebElement getHomeButton() throws MalformedURLException {
         String xpath = "//icon[@class='nav-logo lazy-loaded']";
         waitForElement(driver.findElementByXPath(xpath), 10, 1);
         WebElement homeButton = driver.findElementByXPath(xpath);
         return homeButton;
     }
 
-    public static String getWelcomeMessage() {
+    public static String getWelcomeMessage() throws MalformedURLException {
         String xpath = "//h1[@class='hero__headline hero__headline--basic']";
         waitForElement(driver.findElementByXPath(xpath), 10, 1);
         WebElement welcomeMessage = driver.findElementByXPath(xpath);

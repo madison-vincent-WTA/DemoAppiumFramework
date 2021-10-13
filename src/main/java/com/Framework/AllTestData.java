@@ -18,7 +18,7 @@ public class AllTestData {
 
 	// Below is another example of how a data provider could be structured
 	@DataProvider(name="ClickTestData2")
-	public Object[][] getButton2()
+	public static Object[][] getButton2()
 	{
 		Object[][] buttons=new Object[2][4]; //This shows the object as containing 2 rows and 3 columns
 
@@ -38,7 +38,7 @@ public class AllTestData {
 	}
 
 	@DataProvider(name="BrowserTestData")
-	public Object[][] getWelcomeMessage()
+	public static Object[][] getWelcomeMessage()
 	{
 		//You can store many values here as an array, or just one
 		Object expected[][]=new Object[][]

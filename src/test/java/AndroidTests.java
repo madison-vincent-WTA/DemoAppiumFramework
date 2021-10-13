@@ -1,4 +1,5 @@
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.util.concurrent.TimeUnit;
 import com.Framework.AndroidBase;
 import com.Framework.AllTestData;
@@ -38,7 +39,11 @@ public class AndroidTests extends AndroidBase {
         WebElement element = driver.findElementByXPath("//android.widget.TextView[@content-desc='"+buttonName+"']");
         element.click();
         Thread.sleep(3000);
-        softAssert.assertEquals(android.getButtonText(desc), buttonText, message);
+        try {
+            softAssert.assertEquals(android.getButtonText(desc), buttonText, message);
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
         driver.pressKey(new KeyEvent(AndroidKey.BACK));
         Thread.sleep(3000);
         softAssert.assertAll();
