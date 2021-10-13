@@ -88,8 +88,12 @@ public class AndroidBase implements IReporter { // TODO convert this class to ge
         FileUtils.copyFile(scrFile,new File (System.getProperty("user.dir")+"/test-output/Screenshots/"+testName+".png"));
         File destFile = new File(System.getProperty("user.dir")+"/test-output/Screenshots/"+testName+".png");
         FileUtils.copyFile(scrFile, destFile);
-        Reporter.log("<a href='"+destFile.getAbsolutePath()+"'> <img src='"+destFile.getAbsolutePath()+"' height='100' width='100'/> </a>");
+        Reporter.log("<a href='/DemoFramework/test-output/Screenshots/"+testName+".png'> <img src='/DemoFramework/test-output/Screenshots/"+testName+".png' height='400' width='200'/> </a>");
         System.out.println("***** Screenshot Captured *****");
+
+        //Need the link to be http://localhost:63342/DemoFramework/test-output/Screenshots/checkButtonFunction.png
+        // is currently http://localhost:63342/Users/madison.vincent/IdeaProjects/DemoFramework/test-output/Screenshots/checkButtonFunction.png
+
 // TODO - images are broken in emailable report and unsure why.
 //  The screenshot is captured and the path in the image link seems correct, but returns a 404 error
         //  Additionally, never figured out images in Extent Reports.
