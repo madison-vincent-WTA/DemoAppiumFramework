@@ -1,20 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testng-results skipped="0" failed="2" ignored="0" total="2" passed="0">
   <reporter-output>
+    <line>
+      <![CDATA[<a href='/Users/madison.vincent/IdeaProjects/DemoFramework/test-output/Screenshots/checkButtonFunction.png'> <img src='/Users/madison.vincent/IdeaProjects/DemoFramework/test-output/Screenshots/checkButtonFunction.png' height='100' width='100'/> </a>]]>
+    </line>
+    <line>
+      <![CDATA[<a href='/Users/madison.vincent/IdeaProjects/DemoFramework/test-output/Screenshots/checkButtonFunction.png'> <img src='/Users/madison.vincent/IdeaProjects/DemoFramework/test-output/Screenshots/checkButtonFunction.png' height='100' width='100'/> </a>]]>
+    </line>
   </reporter-output>
-  <suite name="All Test Suite" duration-ms="30425" started-at="2021-10-13T12:09:45 MDT" finished-at="2021-10-13T12:10:16 MDT">
+  <suite name="All Test Suite" duration-ms="75977" started-at="2021-10-13T13:18:23 MDT" finished-at="2021-10-13T13:19:39 MDT">
     <groups>
       <group name="smoke">
-        <method signature="AndroidTests.checkButtonFunction(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:AndroidTests@7a1ebcd8]" name="checkButtonFunction" class="AndroidTests"/>
+        <method signature="AndroidTests.checkButtonFunction(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:AndroidTests@11438d26]" name="checkButtonFunction" class="AndroidTests"/>
       </group> <!-- smoke -->
     </groups>
-    <test name="All Tests" duration-ms="30425" started-at="2021-10-13T12:09:45 MDT" finished-at="2021-10-13T12:10:16 MDT">
+    <test name="All Tests" duration-ms="75977" started-at="2021-10-13T13:18:23 MDT" finished-at="2021-10-13T13:19:39 MDT">
       <class name="AndroidTests">
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:AndroidTests@7a1ebcd8]" name="beforeTest" is-config="true" duration-ms="7528" started-at="2021-10-13T12:09:45 MDT" finished-at="2021-10-13T12:09:53 MDT">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:AndroidTests@11438d26]" name="beforeTest" is-config="true" duration-ms="31087" started-at="2021-10-13T13:18:23 MDT" finished-at="2021-10-13T13:18:54 MDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="FAIL" signature="checkButtonFunction(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:AndroidTests@7a1ebcd8]" name="checkButtonFunction" duration-ms="11395" started-at="2021-10-13T12:09:53 MDT" description="Both buttons on the home screen lead to the correct page" data-provider="ClickTestData" finished-at="2021-10-13T12:10:04 MDT">
+        <test-method status="FAIL" signature="checkButtonFunction(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:AndroidTests@11438d26]" name="checkButtonFunction" duration-ms="19320" started-at="2021-10-13T13:18:54 MDT" description="Both buttons on the home screen lead to the correct page" data-provider="ClickTestData" finished-at="2021-10-13T13:19:14 MDT">
           <params>
             <param index="0">
               <value>
@@ -79,9 +85,12 @@ at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
             </full-stacktrace>
           </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
+            <line>
+              <![CDATA[<a href='/Users/madison.vincent/IdeaProjects/DemoFramework/test-output/Screenshots/checkButtonFunction.png'> <img src='/Users/madison.vincent/IdeaProjects/DemoFramework/test-output/Screenshots/checkButtonFunction.png' height='100' width='100'/> </a>]]>
+            </line>
           </reporter-output>
         </test-method> <!-- checkButtonFunction -->
-        <test-method status="FAIL" signature="checkButtonFunction(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:AndroidTests@7a1ebcd8]" name="checkButtonFunction" duration-ms="10918" started-at="2021-10-13T12:10:05 MDT" description="Both buttons on the home screen lead to the correct page" data-provider="ClickTestData" finished-at="2021-10-13T12:10:15 MDT">
+        <test-method status="FAIL" signature="checkButtonFunction(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:AndroidTests@11438d26]" name="checkButtonFunction" duration-ms="21059" started-at="2021-10-13T13:19:16 MDT" description="Both buttons on the home screen lead to the correct page" data-provider="ClickTestData" finished-at="2021-10-13T13:19:37 MDT">
           <params>
             <param index="0">
               <value>
@@ -146,6 +155,9 @@ at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
             </full-stacktrace>
           </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
+            <line>
+              <![CDATA[<a href='/Users/madison.vincent/IdeaProjects/DemoFramework/test-output/Screenshots/checkButtonFunction.png'> <img src='/Users/madison.vincent/IdeaProjects/DemoFramework/test-output/Screenshots/checkButtonFunction.png' height='100' width='100'/> </a>]]>
+            </line>
           </reporter-output>
         </test-method> <!-- checkButtonFunction -->
       </class> <!-- AndroidTests -->

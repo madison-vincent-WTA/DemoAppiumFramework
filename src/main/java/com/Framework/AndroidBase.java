@@ -85,13 +85,14 @@ public class AndroidBase implements IReporter { // TODO convert this class to ge
 
     public static void getScreenshot(String testName) throws IOException {
         File scrFile=	((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-        FileUtils.copyFile(scrFile,new File (System.getProperty("user.dir")+"/test-output/"+testName+".png"));
-        //System.getProperty("user.dir")+"/test-output/Screenshots/"+testName+".png"
-        File destFile = new File(System.getProperty("user.dir")+"/test-output/"+testName+".png");
+        FileUtils.copyFile(scrFile,new File (System.getProperty("user.dir")+"/test-output/Screenshots/"+testName+".png"));
+        File destFile = new File(System.getProperty("user.dir")+"/test-output/Screenshots/"+testName+".png");
         FileUtils.copyFile(scrFile, destFile);
         Reporter.log("<a href='"+destFile.getAbsolutePath()+"'> <img src='"+destFile.getAbsolutePath()+"' height='100' width='100'/> </a>");
         System.out.println("***** Screenshot Captured *****");
-
+// TODO - images are broken in emailable report and unsure why.
+//  The screenshot is captured and the path in the image link seems correct, but returns a 404 error
+        //  Additionally, never figured out images in Extent Reports.
     }
 
     public static WebElement waitForElement(WebElement element, int timoutSec, int pollingSec) {
