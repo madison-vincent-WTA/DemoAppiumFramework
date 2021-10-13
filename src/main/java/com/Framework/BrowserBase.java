@@ -1,10 +1,11 @@
 package com.Framework;
 
+import com.Framework.Listeners.AssertionLogging;
 import io.appium.java_client.remote.MobileCapabilityType;
 import org.openqa.selenium.*;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import pageObjects.ChromePageObjects;
+import pageObjects.Browser.LandingPageObjects;
 import java.io.IOException;
 import java.net.URL;
 
@@ -12,7 +13,7 @@ public class BrowserBase extends Base {
 
     public static RemoteWebDriver driver;
     public static AssertionLogging softAssert = new AssertionLogging();
-    public static ChromePageObjects chrome = new ChromePageObjects();
+    public static LandingPageObjects chrome = new LandingPageObjects();
 
     public static WebDriver capabilities() throws IOException {
 

@@ -1,15 +1,13 @@
-package pageObjects;
+package pageObjects.iOS;
 
-import com.Framework.IOSBase;
+import com.Framework.iOSBase;
 import io.appium.java_client.ios.IOSDriver;
 import org.openqa.selenium.WebElement;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
 
-import static com.Framework.IOSBase.waitForElement;
-
-public class iOSPageObjects extends IOSBase {
+public class AppHomePageObjects extends iOSBase {
     public static IOSDriver driver;
 
     static {

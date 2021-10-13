@@ -11,7 +11,7 @@ import io.appium.java_client.remote.AutomationName;
 import io.appium.java_client.remote.IOSMobileCapabilityType;
 import io.appium.java_client.remote.MobileCapabilityType;
 
-public class IOSBase extends Base {
+public class iOSBase extends Base {
 
     public static IOSDriver DesiredCapabilities(String appName) throws IOException {
         DesiredCapabilities capabilities = new DesiredCapabilities();

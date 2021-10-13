@@ -1,4 +1,4 @@
-package pageObjects;
+package pageObjects.Browser;
 
 import com.Framework.BrowserBase;
 import org.openqa.selenium.By;
@@ -11,7 +11,7 @@ import org.testng.asserts.SoftAssert;
 
 import java.net.MalformedURLException;
 
-public class ChromePageObjects extends BrowserBase {
+public class LandingPageObjects extends BrowserBase {
 
     public static WebElement getHomeButton() throws MalformedURLException {
         String xpath = "//icon[@class='nav-logo lazy-loaded']";

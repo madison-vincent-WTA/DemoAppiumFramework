@@ -2,21 +2,20 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.util.concurrent.TimeUnit;
 import com.Framework.AndroidBase;
-import com.Framework.AllTestData;
+import com.Framework.DataProviders.Android.HomePageData;
 import io.appium.java_client.android.nativekey.AndroidKey;
 import io.appium.java_client.android.nativekey.KeyEvent;
 import org.openqa.selenium.WebElement;
-import org.testng.ITestResult;
 import org.testng.annotations.*;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
-import pageObjects.AndroidAppPageObjects;
+import pageObjects.Android.AppHomePageObjects;
 
 @Listeners(com.Framework.Listeners.Listeners.class)
 
 public class AndroidTests extends AndroidBase {
 
-    AndroidAppPageObjects android = new AndroidAppPageObjects();
+    AppHomePageObjects android = new AppHomePageObjects();
 
     @BeforeTest
     public void beforeTest() throws IOException, InterruptedException
@@ -32,7 +31,7 @@ public class AndroidTests extends AndroidBase {
 
     //Note: The below parameterized test must be run from the XML file due to parameter dependencies
     @Parameters({"URL"}) // TODO: needs to be added as a string in the test method and used in the test
-    @Test (groups= {"smoke"}, enabled = true, dataProvider= "ClickTestData",dataProviderClass= AllTestData.class,
+    @Test (groups= {"smoke"}, enabled = true, dataProvider= "ClickTestData",dataProviderClass= HomePageData.class,
     description = "Both buttons on the home screen lead to the correct page")
     public void checkButtonFunction(String buttonName, String desc, String buttonText, String message) throws InterruptedException {
         Thread.sleep(3000);

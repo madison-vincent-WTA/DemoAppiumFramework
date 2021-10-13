@@ -1,14 +1,13 @@
-import com.Framework.IOSBase;
+import com.Framework.iOSBase;
 import io.appium.java_client.ios.IOSDriver;
 import org.testng.annotations.Test;
-import pageObjects.iOSPageObjects;
+import pageObjects.iOS.AppHomePageObjects;
 
 import java.io.IOException;
-import java.net.MalformedURLException;
 
-public class IOSTests extends IOSBase {
+public class iOSTests extends iOSBase {
 
-    iOSPageObjects ios = new iOSPageObjects();
+    AppHomePageObjects ios = new AppHomePageObjects();
 
 @Test
 public void clickAlertViews() throws IOException, InterruptedException {
