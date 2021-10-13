@@ -5,8 +5,8 @@
     <classes>
       <class name="AndroidTests">
         <methods>
+          <include name="checkButtonFunction" invocation-numbers="0 1"/>
           <include name="beforeTest"/>
-          <include name="clickTest"/>
         </methods>
       </class> <!-- AndroidTests -->
     </classes>

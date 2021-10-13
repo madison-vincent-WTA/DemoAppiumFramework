@@ -1,45 +1,42 @@
 package com.Framework;
 
 import java.io.File;
+import java.util.*;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.URL;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
-
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.remote.DesiredCapabilities;
-
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.remote.MobileCapabilityType;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
+import org.testng.IReporter;
+import org.testng.Reporter;
 
-public class AndroidBase {
+public class AndroidBase implements IReporter { // TODO convert this class to general base or "common"
     public static AppiumDriverLocalService service;
     public static AndroidDriver<AndroidElement>  driver;
     public static AssertionLogging softAssert = new AssertionLogging();
 
-    public AppiumDriverLocalService startServer()
-    {
-        //
+    public AppiumDriverLocalService startServer() {
         boolean flag=	checkIfServerIsRunnning(4723);
         if(!flag)
         {
-
             service=AppiumDriverLocalService.buildDefaultService();
             service.start();
         }
         return service;
-
     }
 
     public static boolean checkIfServerIsRunnning(int port) {
-
         boolean isServerRunning = false;
         ServerSocket serverSocket;
         try {
@@ -54,14 +51,12 @@ public class AndroidBase {
         return isServerRunning;
     }
 
-    public static void startEmulator() throws IOException, InterruptedException
-    {
+    public static void startEmulator() throws IOException, InterruptedException {
         Runtime.getRuntime().exec(System.getProperty("user.dir")+"/src/main/resources/startEmulator.bat");
         Thread.sleep(6000);
     }
 
-    public static  AndroidDriver<AndroidElement> capabilities(String appName) throws IOException, InterruptedException
-    {
+    public static  AndroidDriver<AndroidElement> capabilities(String appName) throws IOException, InterruptedException {
         FileInputStream fis=new FileInputStream(System.getProperty("user.dir")+"/src/main/java/com/Framework/global.properties");
         Properties prop=new Properties();
         prop.load(fis);
@@ -73,6 +68,9 @@ public class AndroidBase {
         if(device.contains("emulator"))
         {
             startEmulator();
+            // This is specifically asking if the name of the device contains the word "Emulator"
+            // so it will open the emulator on its own before the test
+            // TODO add this to a beforetest?
         }
 
         capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, device);
@@ -85,10 +83,15 @@ public class AndroidBase {
         return driver;
     }
 
-    public static void getScreenshot(String s) throws IOException
-    {
-        File scrfile=	((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-        FileUtils.copyFile(scrfile,new File(System.getProperty("user.dir")+"\\"+s+".png"));
+    public static void getScreenshot(String testName) throws IOException {
+        File scrFile=	((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        FileUtils.copyFile(scrFile,new File (System.getProperty("user.dir")+"/test-output/"+testName+".png"));
+        //System.getProperty("user.dir")+"/test-output/Screenshots/"+testName+".png"
+        File destFile = new File(System.getProperty("user.dir")+"/test-output/"+testName+".png");
+        FileUtils.copyFile(scrFile, destFile);
+        Reporter.log("<a href='"+destFile.getAbsolutePath()+"'> <img src='"+destFile.getAbsolutePath()+"' height='100' width='100'/> </a>");
+        System.out.println("***** Screenshot Captured *****");
+
     }
 
     public static WebElement waitForElement(WebElement element, int timoutSec, int pollingSec) {
@@ -105,13 +108,9 @@ public class AndroidBase {
 
                 System.out.println("Element Not found trying again - " + element.toString().substring(70));
                 e.printStackTrace();
-
             }
         }
-
         return element;
-
     }
-
 }
 

@@ -26,7 +26,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button class="button" id="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 2 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -40,7 +40,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-All_Test_Suite">
-              <span class="suite-name border-passed">All Test Suite</span>
+              <span class="suite-name border-failed">All Test Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -61,7 +61,7 @@
                 </li>
                 <li>
                   <a href="#" class="navigator-link " panel-name="group-All_Test_Suite">
-                    <span>0 groups</span>
+                    <span>1 group</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -93,36 +93,26 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">4 methods,   4 passed</span>
+                    <span class="method-stats">2 methods, 2 failed,   </span>
                   </li>
                   <li>
-                    <span class="method-list-title passed">Passed methods</span>
-                    <span class="show-or-hide-methods passed">
-                      <a href="#" panel-name="suite-All_Test_Suite" class="hide-methods passed suite-All_Test_Suite"> (hide)</a> <!-- hide-methods passed suite-All_Test_Suite -->
-                      <a href="#" panel-name="suite-All_Test_Suite" class="show-methods passed suite-All_Test_Suite"> (show)</a> <!-- show-methods passed suite-All_Test_Suite -->
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-All_Test_Suite" class="hide-methods failed suite-All_Test_Suite"> (hide)</a> <!-- hide-methods failed suite-All_Test_Suite -->
+                      <a href="#" panel-name="suite-All_Test_Suite" class="show-methods failed suite-All_Test_Suite"> (show)</a> <!-- show-methods failed suite-All_Test_Suite -->
                     </span>
-                    <div class="method-list-content passed suite-All_Test_Suite">
+                    <div class="method-list-content failed suite-All_Test_Suite">
                       <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-All_Test_Suite" title="AndroidTests" hash-for-method="checkButtonFunction(Animation, Bouncing Balls, Bouncing Balls, Checking Animation Button)">checkButtonFunction(Animation, Bouncing Balls, Bouncing Balls, Checking Animation Button)</a> <!-- method navigator-link -->
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-All_Test_Suite" title="AndroidTests" hash-for-method="checkButtonFunction(Animation, Bouncing Balls, Bouncing Balls, Checking animation button text)">checkButtonFunction(Animation, Bouncing Balls, Bouncing Balls, Checking animation button text)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-All_Test_Suite" title="AndroidTests" hash-for-method="checkButtonFunction(Accessibility, Accessibility Node Provider, Accessibility Node Provider, Checking Accessibility Butt...)">checkButtonFunction(Accessibility, Accessibility Node Provider, Accessibility Node Provider, Checking Accessibility Butt...)</a> <!-- method navigator-link -->
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-All_Test_Suite" title="AndroidTests" hash-for-method="checkButtonFunction(Accessibility, Accessibility Node Provider, Accessibility Node Provider1, Checking accessibility but...)">checkButtonFunction(Accessibility, Accessibility Node Provider, Accessibility Node Provider1, Checking accessibility but...)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-All_Test_Suite" title="BrowserTests" hash-for-method="checkWelcomeMessage(Welcome to your professional community)">checkWelcomeMessage(Welcome to your professional community)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-All_Test_Suite" title="IOSTests" hash-for-method="clickAlertViews">clickAlertViews</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content passed suite-All_Test_Suite -->
+                    </div> <!-- method-list-content failed suite-All_Test_Suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -134,61 +124,50 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-All_Test_Suite" class="panel All_Test_Suite">
-          <div class="suite-All_Test_Suite-class-passed">
+          <div class="suite-All_Test_Suite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">IOSTests</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="clickAlertViews">
-                  </a> <!-- clickAlertViews -->
-                  <span class="method-name">clickAlertViews</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-All_Test_Suite-class-passed -->
-          <div class="suite-All_Test_Suite-class-passed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
+              <img src="failed.png"/>
               <span class="class-name">AndroidTests</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="checkButtonFunction(Animation, Bouncing Balls, Bouncing Balls, Checking Animation Button)">
-                  </a> <!-- checkButtonFunction(Animation, Bouncing Balls, Bouncing Balls, Checking Animation Button) -->
+                  <a name="checkButtonFunction(Animation, Bouncing Balls, Bouncing Balls, Checking animation button text)">
+                  </a> <!-- checkButtonFunction(Animation, Bouncing Balls, Bouncing Balls, Checking animation button text) -->
                   <span class="method-name">checkButtonFunction</span>
-                  <span class="parameters">(Animation, Bouncing Balls, Bouncing Balls, Checking Animation Button)</span>
+                  <span class="parameters">(Animation, Bouncing Balls, Bouncing Balls, Checking animation button text)</span>
+                  <div class="stack-trace">java.lang.AssertionError: The following asserts failed:
+	Checking accessibility button text expected [Accessibility Node Provider1] but found [Accessibility Node Provider]
+	at AndroidTests.checkButtonFunction(AndroidTests.java:44)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
+... Removed 26 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(Both buttons on the home screen lead to the correct page)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="checkButtonFunction(Accessibility, Accessibility Node Provider, Accessibility Node Provider, Checking Accessibility Butt...)">
-                  </a> <!-- checkButtonFunction(Accessibility, Accessibility Node Provider, Accessibility Node Provider, Checking Accessibility Butt...) -->
+                  <a name="checkButtonFunction(Accessibility, Accessibility Node Provider, Accessibility Node Provider1, Checking accessibility but...)">
+                  </a> <!-- checkButtonFunction(Accessibility, Accessibility Node Provider, Accessibility Node Provider1, Checking accessibility but...) -->
                   <span class="method-name">checkButtonFunction</span>
-                  <span class="parameters">(Accessibility, Accessibility Node Provider, Accessibility Node Provider, Checking Accessibility Button)</span>
+                  <span class="parameters">(Accessibility, Accessibility Node Provider, Accessibility Node Provider1, Checking accessibility button text)</span>
+                  <div class="stack-trace">java.lang.AssertionError: The following asserts failed:
+	Checking accessibility button text expected [Accessibility Node Provider1] but found [Accessibility Node Provider]
+	at AndroidTests.checkButtonFunction(AndroidTests.java:44)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
+... Removed 26 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(Both buttons on the home screen lead to the correct page)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-All_Test_Suite-class-passed -->
-          <div class="suite-All_Test_Suite-class-passed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">BrowserTests</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="checkWelcomeMessage(Welcome to your professional community)">
-                  </a> <!-- checkWelcomeMessage(Welcome to your professional community) -->
-                  <span class="method-name">checkWelcomeMessage</span>
-                  <span class="parameters">(Welcome to your professional community)</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-All_Test_Suite-class-passed -->
+          </div> <!-- suite-All_Test_Suite-class-failed -->
         </div> <!-- panel All_Test_Suite -->
         <div panel-name="test-xml-All_Test_Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -199,11 +178,13 @@
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;All Test Suite&quot;&gt;
+  &lt;listeners&gt;
+    &lt;listener class-name=&quot;com.Framework.Listeners.Listeners&quot;/&gt;
+    &lt;listener class-name=&quot;com.Framework.Listeners.ExtentReporterNG&quot;/&gt;
+  &lt;/listeners&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;All Tests&quot;&gt;
     &lt;classes&gt;
       &lt;class name=&quot;AndroidTests&quot;/&gt;
-      &lt;class name=&quot;BrowserTests&quot;/&gt;
-      &lt;class name=&quot;IOSTests&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- All Tests --&gt;
 &lt;/suite&gt; &lt;!-- All Test Suite --&gt;
@@ -217,7 +198,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">All Tests (3 classes)</span>
+                <span class="test-name">All Tests (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -227,6 +208,14 @@
             <span class="header-content">Groups for All Test Suite</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="test-group">
+              <span class="test-group-name">smoke</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">checkButtonFunction</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="times-All_Test_Suite" class="panel">
@@ -243,28 +232,20 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(4);
+data.addRows(2);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'checkWelcomeMessage')
-data.setCell(0, 2, 'BrowserTests')
-data.setCell(0, 3, 17272);
+data.setCell(0, 1, 'checkButtonFunction')
+data.setCell(0, 2, 'AndroidTests')
+data.setCell(0, 3, 11395);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'clickAlertViews')
-data.setCell(1, 2, 'IOSTests')
-data.setCell(1, 3, 13193);
-data.setCell(2, 0, 2)
-data.setCell(2, 1, 'checkButtonFunction')
-data.setCell(2, 2, 'AndroidTests')
-data.setCell(2, 3, 10850);
-data.setCell(3, 0, 3)
-data.setCell(3, 1, 'checkButtonFunction')
-data.setCell(3, 2, 'AndroidTests')
-data.setCell(3, 3, 10749);
+data.setCell(1, 1, 'checkButtonFunction')
+data.setCell(1, 2, 'AndroidTests')
+data.setCell(1, 3, 10918);
 window.suiteTableData['All_Test_Suite']= { tableData: data, tableDiv: 'times-div-All_Test_Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 52 seconds</span>
+              <span class="suite-total-time">Total running time: 22 seconds</span>
               <div id="times-div-All_Test_Suite">
               </div> <!-- times-div-All_Test_Suite -->
             </div> <!-- times-div -->
@@ -296,26 +277,16 @@ return data;
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
               <div class="test-method">
-                <span class="method-name">checkButtonFunction(Accessibility, Accessibility Node Provider, Accessibility Node Provider, Checking Accessibility Butt...)</span>
-                <span class="method-start">8896 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">checkButtonFunction(Accessibility, Accessibility Node Provider, Accessibility Node Provider1, Checking accessibility but...)</span>
+                <span class="method-start">7547 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">checkButtonFunction(Animation, Bouncing Balls, Bouncing Balls, Checking Animation Button)</span>
-                <span class="method-start">19748 ms</span>
-              </div> <!-- test-method -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">BrowserTests</div> <!-- chronological-class-name -->
-              <div class="test-method">
-                <span class="method-name">checkWelcomeMessage(Welcome to your professional community)</span>
-                <span class="method-start">30500 ms</span>
-              </div> <!-- test-method -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">IOSTests</div> <!-- chronological-class-name -->
-              <div class="test-method">
-                <span class="method-name">clickAlertViews</span>
-                <span class="method-start">47773 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">checkButtonFunction(Animation, Bouncing Balls, Bouncing Balls, Checking animation button text)</span>
+                <span class="method-start">19228 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
