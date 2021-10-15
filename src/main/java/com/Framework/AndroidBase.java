@@ -28,7 +28,7 @@ public class AndroidBase extends Base {
         File app = new File(appDir, (String) prop.get(appName));
         // Retrieving the device name from Global Properties and storing it as a property
         String device=(String) prop.get("androidDevice");
-        //TODO investigate whether we can get the app name this way as well
+        //TODO investigate whether we can get the app name this way as well, update on other base classes
 
         // Initializing Desired Capabilities, which is what we utilize to set properties for our testing.
         //Setting all the properties below
