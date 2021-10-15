@@ -1,22 +1,13 @@
-package pageObjects.iOS;
+package pageObjects.IOS;
 
-import com.Framework.iOSBase;
+import com.Framework.IOSBase;
 import io.appium.java_client.ios.IOSDriver;
 import org.openqa.selenium.WebElement;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
 
-public class AppHomePageObjects extends iOSBase {
-    public static IOSDriver driver;
-
-    static {
-        try {
-            driver = DesiredCapabilities("UIKitCatalog");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+public class AppHomePageObjects extends IOSBase {
 
     public static WebElement getButtonsButton() throws MalformedURLException {
         String xpath = "//XCUIElementTypeApplication[@name='UIKitCatalog']/XCUIElementTypeWindow/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[3]/XCUIElementTypeOther[1]/XCUIElementTypeOther";

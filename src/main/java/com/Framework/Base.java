@@ -42,6 +42,17 @@ public class Base {
         Thread.sleep(6000);
     }
 
+//    if (device.contains("emulator"))
+//    {
+//        startEmulator();
+//        // IF the device name in Global Properties contains the word "emulator", we will start the emulator
+//        //This requires you to change the naming convention in Android Virtual Devices
+//        // TODO add this to a beforetest?
+//        //TODO add to a separate method
+//        //TODO update device names for physical / emulator and comment accordingly
+//        //TODO add If/Then logic or an AfterTest that shuts down the emulator
+//    }
+
     public static void getScreenshot(String testName) throws IOException {
         File scrFile=	((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
         FileUtils.copyFile(scrFile,new File (System.getProperty("user.dir")+"/test-output/Screenshots/"+testName+".png"));
@@ -82,6 +93,16 @@ public class Base {
         {
             service=AppiumDriverLocalService.buildDefaultService();
             service.start();
+        }
+        return service;
+    }
+
+    public AppiumDriverLocalService stopServer() {
+        boolean flag=	checkIfServerIsRunning(4723);
+        if(flag)
+        {
+            service=AppiumDriverLocalService.buildDefaultService();
+            service.stop();
         }
         return service;
     }

@@ -11,10 +11,11 @@ import io.appium.java_client.remote.AutomationName;
 import io.appium.java_client.remote.IOSMobileCapabilityType;
 import io.appium.java_client.remote.MobileCapabilityType;
 
-public class iOSBase extends Base {
+public class IOSBase extends Base {
+
+    public static DesiredCapabilities capabilities = new DesiredCapabilities();
 
     public static IOSDriver DesiredCapabilities(String appName) throws IOException {
-        DesiredCapabilities capabilities = new DesiredCapabilities();
         FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "/src/main/java/com/Framework/global.properties");
         Properties prop = new Properties();
         prop.load(fis);
@@ -30,7 +31,7 @@ public class iOSBase extends Base {
         capabilities.setCapability("commandTimeouts", "12000");
         capabilities.setCapability(MobileCapabilityType.APP, app.getAbsolutePath());
 
-        IOSDriver driver = new IOSDriver<>(new URL("http://0.0.0.0:4723/wd/hub"), capabilities);
+        IOSDriver driver = new IOSDriver<>(new URL("http://192.168.50.58:4723/wd/hub"), capabilities);
 
         return driver;
     }

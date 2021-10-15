@@ -1,11 +1,11 @@
-import com.Framework.iOSBase;
+import com.Framework.IOSBase;
 import io.appium.java_client.ios.IOSDriver;
 import org.testng.annotations.Test;
-import pageObjects.iOS.AppHomePageObjects;
+import pageObjects.IOS.AppHomePageObjects;
 
 import java.io.IOException;
 
-public class iOSTests extends iOSBase {
+public class IOSTests extends IOSBase {
 
     AppHomePageObjects ios = new AppHomePageObjects();
 

@@ -12,6 +12,7 @@ import io.appium.java_client.android.AndroidElement;
 import pageObjects.Android.AppHomePageObjects;
 
 @Listeners(com.Framework.Listeners.Listeners.class)
+//TODO need to add listeners to other classes?
 
 public class AndroidTests extends AndroidBase {
 
@@ -27,6 +28,14 @@ public class AndroidTests extends AndroidBase {
         // TODO adding an afterTest (?) that also stops the server via lesson 105.. Thinking it needs to
         //  be in base if possible
         // TODO adding closing and opening the emulator to the before and after tests as well via lesson 105?
+    }
+
+   //TODO Add before and after tests to all test classes
+
+    @AfterTest
+    public void afterTest() {
+        service=stopServer();
+        //TODO additional tests to test this functionality
     }
 
     //Note: The below parameterized test must be run from the XML file due to parameter dependencies
