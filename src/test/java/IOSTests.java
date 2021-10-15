@@ -12,8 +12,10 @@ public class IOSTests extends IOSBase {
 @Test
 public void clickAlertViews() throws IOException, InterruptedException {
     IOSDriver driver = DesiredCapabilities("UIKitCatalog");
+    //TODO call the driver from the base as it isn't needed her or should at least be parameterized
     Thread.sleep(3000);
+    //Finding an element based on ID and clicking on it
     driver.findElementByAccessibilityId("Alert Views").click();
-
     }
+    //TODO: Everything - assertion, examples of ios interactions, test dependecy, priorities, xpath etc
 }
