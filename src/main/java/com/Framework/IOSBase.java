@@ -15,7 +15,7 @@ public class IOSBase extends Base {
 
     public static DesiredCapabilities capabilities = new DesiredCapabilities();
 
-    public static IOSDriver DesiredCapabilities(String appName) throws IOException {
+    public static IOSDriver DesiredCapabilities() throws IOException {
 
         // Creates a FileInputStream by opening a connection to an actual file, the file named by the path name in the file system
         FileInputStream fis=new FileInputStream(System.getProperty("user.dir")+"/src/main/java/com/Framework/global.properties");
@@ -23,10 +23,12 @@ public class IOSBase extends Base {
         Properties prop=new Properties();
         //Reads a property list (key and element pairs) from the input stream.
         prop.load(fis);
-        //Defining the folder directory that the app file is currently in
-        File appDir = new File("/Users/madison.vincent/IdeaProjects/DemoFramework/src/main/resources/");
+        //Retrieving the pathname for the folder containing the app file and storing it as a property
+        String directory=(String) prop.get("appDir");
+        //Supplying the pathname for the app file as stored previously
+        File appDir = new File(directory);
         //Retrieving the App Name from Global Properties and storing it as a property
-        File app = new File(appDir, (String) prop.get(appName));
+        File app = new File(appDir, (String) prop.get("iOSApp"));
         // Retrieving the device name from Global Properties and storing it as a property
         String device = (String) prop.get("iosDevice");
 

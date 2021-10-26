@@ -25,7 +25,7 @@ public class AndroidTests extends AndroidBase {
         service=startServer();
         //TODO change this to BeforeSuite?
         //Initializing the driver and supplying the application name
-        AndroidDriver<AndroidElement> driver=capabilities("apiDemo");
+        AndroidDriver<AndroidElement> driver=capabilities();
         //TODO: Should this be removed from the base if it lives in the beforeTest? Or should the beforeTest itself be moved to Base?
         //TODO: Application name should only be supplied by Global Properties
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
