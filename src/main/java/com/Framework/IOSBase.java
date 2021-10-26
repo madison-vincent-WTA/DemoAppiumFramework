@@ -33,20 +33,14 @@ public class IOSBase extends Base {
         String device = (String) prop.get("iosDevice");
 
         //Setting all the properties below
-        //Providing Appium with the platform and iOS version on the device that will be used
-        capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "iOS");
-        capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "14.5");
-        //TODO Parameterize these using Global Properties
         //Telling Appium which device to use based on the property we set earlier
         capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, device);
+        //Getting the UDID value from global properties and storing it as a property
+        String udid =(String) prop.get("UDID");
         //Providing the UDID for the device/simulator as required
-        capabilities.setCapability(MobileCapabilityType.UDID, "111649F0-F13E-487A-8348-AA685C33679E");
-        //TODO Parameterize using Global Properties
+        capabilities.setCapability(MobileCapabilityType.UDID, udid);
         //Telling Appium that we are using XCUI Test via XCode to run test automation on the app
         capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, AutomationName.IOS_XCUI_TEST);
-        //Defining the Amount of time in ms to wait for instruments before assuming it hung and failing the session
-        capabilities.setCapability(IOSMobileCapabilityType.LAUNCH_TIMEOUT, 500000);
-        //TODO: Add Launch timeout to android (I believe it is AVD_LAUNCH_TIMEOUT )
         //This defines how long Appium should wait for a new command from the client before assuming the client ended the session
         //Set to 0 to disable the timeout, but this isn't recommended as it allows automation sessions to continue indefinitely
         capabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT,30);
@@ -55,7 +49,8 @@ public class IOSBase extends Base {
         //TODO testing on pre-installed apps and physical devices, How easy is it to open a pre-installed app rather than one hosted here
 
         //Setting up the driver
-        IOSDriver driver = new IOSDriver<>(new URL("http://192.168.50.58:4723/wd/hub"), capabilities);
+        String address=(String) prop.get("IP");
+        IOSDriver driver = new IOSDriver<>(new URL(address), capabilities);
         return driver;
     }
 }
