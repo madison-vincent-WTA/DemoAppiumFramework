@@ -45,8 +45,6 @@ public class AndroidBase extends Base {
         //This defines how long Appium should wait for a new command from the client before assuming the client ended the session
         //Set to 0 to disable the timeout, but this isn't recommended as it allows automation sessions to continue indefinitely
         capabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT,30);
-        //TODO testing on pre-installed apps and physical devices, How easy is it to open a pre-installed app rather than one hosted here
-        //TODO Repeat for iOS
 
         //Setting up the driver
         String address=(String) prop.get("IP");

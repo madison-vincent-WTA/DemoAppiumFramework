@@ -46,7 +46,6 @@ public class IOSBase extends Base {
         capabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT,30);
         //Telling Appium where to find the application for testing
         capabilities.setCapability(MobileCapabilityType.APP, app.getAbsolutePath());
-        //TODO testing on pre-installed apps and physical devices, How easy is it to open a pre-installed app rather than one hosted here
 
         //Setting up the driver
         String address=(String) prop.get("IP");

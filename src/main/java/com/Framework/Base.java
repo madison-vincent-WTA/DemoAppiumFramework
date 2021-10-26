@@ -59,26 +59,6 @@ public class Base {
         return service;
     }
 
-    public static void startEmulator() throws IOException, InterruptedException {
-        //Starting the emulator
-        //Defining the path and file that will be used to start the emulator via the Terminal
-        Runtime.getRuntime().exec(System.getProperty("user.dir")+"/src/main/resources/startEmulator.bat");
-        //TODO Update startEmulator.bat to use Global Properties
-        //Forcing a 6 second wait to allow the emulator to load
-        Thread.sleep(6000);
-    }
-
-//    if (device.contains("emulator"))
-//    {
-//        startEmulator();
-//        // IF the device name in Global Properties contains the word "emulator", we will start the emulator
-//        //This requires you to change the naming convention in Android Virtual Devices
-//        //TODO add this to a BeforeTest?
-//        //TODO add to a separate method
-//        //TODO update device names for physical / emulator and comment accordingly
-//        //TODO add If/Then logic or an AfterTest that shuts down the emulator
-//    }
-
     public static void getScreenshot(String testName) throws IOException {
         //Capturing a screenshot and saving it in the test-output/Screenshots folder in the project. It is also logged to the Emailable-Report in test-output
         //Take a screenshot and save it as a file

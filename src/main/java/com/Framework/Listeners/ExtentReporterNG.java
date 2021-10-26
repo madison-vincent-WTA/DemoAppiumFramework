@@ -25,7 +25,6 @@ public class ExtentReporterNG implements IReporter {
     ExtentHtmlReporter htmlReporter;
 
     public void generateReport(List<XmlSuite> xmlSuites, List<ISuite> suites, String outputDirectory) {
-    	//TODO Create ExtentReports framework
         htmlReporter = new ExtentHtmlReporter(System.getProperty("user.dir")+"/test-output/Reports/htmlreport.html");
        extent = new ExtentReports();
 
