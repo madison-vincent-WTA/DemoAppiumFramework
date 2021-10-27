@@ -1,11 +1,7 @@
-import com.Framework.AndroidBrowserBase;
-import com.Framework.IOSBase;
-import com.Framework.iOSBrowserBase;
+import com.Framework.Base.iOSBrowserBase;
 import io.appium.java_client.AppiumDriver;
-import org.openqa.selenium.WebDriver;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import pageObjects.Browser.AndroidPageObjects;
 import pageObjects.Browser.iOSPageObjects;
 
 import java.io.IOException;

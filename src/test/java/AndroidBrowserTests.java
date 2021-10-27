@@ -1,18 +1,17 @@
-import com.Framework.AndroidBrowserBase;
-import io.appium.java_client.android.AndroidDriver;
+import com.Framework.Base.AndroidBrowserBase;
+import io.appium.java_client.AppiumDriver;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import pageObjects.Browser.AndroidPageObjects;
-
 import java.io.IOException;
 
 public class AndroidBrowserTests extends AndroidBrowserBase {
     public static AndroidPageObjects chrome = new AndroidPageObjects();
-    static AndroidDriver driver;
+    public static AppiumDriver driver;
 
     static {
         try {
-            driver = capabilities();
+            driver = AndroidBrowserBase.capabilities();
         } catch (IOException e) {
             e.printStackTrace();
         }

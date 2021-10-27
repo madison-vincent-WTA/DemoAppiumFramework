@@ -1,20 +1,20 @@
-package com.Framework;
+package com.Framework.Base;
 
 import com.Framework.Listeners.AssertionLogging;
-import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.android.AndroidElement;
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Properties;
 
-public class AndroidBrowserBase extends AndroidBase{
+public class iOSBrowserBase extends IOSBase {
 
     public static AssertionLogging softAssert = new AssertionLogging();
 
-    public static AndroidDriver<AndroidElement> capabilities() throws IOException {
+    public static AppiumDriver capabilities() throws IOException {
         // Creates a FileInputStream by opening a connection to an actual file, the file named by the path name in the file system
         FileInputStream fis=new FileInputStream(System.getProperty("user.dir")+"/src/main/java/com/Framework/global.properties");
         // Creates an empty property list with no default values.
@@ -27,24 +27,28 @@ public class AndroidBrowserBase extends AndroidBase{
 
         // Setting all the properties below
         // Retrieving the device name from Global Properties and storing it as a property
-        String device = (String) prop.get("androidDevice");
+        String device = (String) prop.get("iOSDevice");
         //Telling Appium which device to use
         capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, device);
         //Telling Appium that we are using Android Studio UI Automator to access the browser and run test automation on the app
-        capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME,"uiautomator2");
+        capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME,"XCUITest");
         //Retrieving the browser name from the Global Properties and storing it
-        String browserName =(String) prop.get("androidBrowserName");
+        String browserName =(String) prop.get("iOSBrowserName");
         //Telling Appium which browser we are using for testing
         capabilities.setCapability(MobileCapabilityType.BROWSER_NAME, browserName);
-        //TODO refactor all global properties and variables so they are the same
-        //Providing the capability name we are setting (Chrome Driver Executable ) as well as the file path to the chrome driver
-        capabilities.setCapability("chromedriverExecutable","/Users/madison.vincent/IdeaProjects/DemoFramework/src/main/resources/chromedriver");
         //Providing platform name and version (Maybe not needed?)
-        capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
+        capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "iOS");
+        //Getting the UDID value from global properties and storing it as a property
+        String udid =(String) prop.get("UDID");
+        //Providing the UDID for the device/simulator as required
+        capabilities.setCapability(MobileCapabilityType.UDID, udid);
 
         //Setting up the driver
-        String address=(String) prop.get("IP");
-        driver = new AndroidDriver<AndroidElement>(new URL(address), capabilities);
+        String address =(String) prop.get("IP");
+        URL url = new URL(address);
+        AppiumDriver driver = new AppiumDriver(url, capabilities);
         return driver;
     }
+
+
 }

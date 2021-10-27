@@ -1,7 +1,6 @@
 package pageObjects.Browser;
 
-import com.Framework.AndroidBrowserBase;
-import com.Framework.iOSBrowserBase;
+import com.Framework.Base.iOSBrowserBase;
 import org.openqa.selenium.WebElement;
 
 import java.net.MalformedURLException;

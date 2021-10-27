@@ -1,10 +1,8 @@
 package pageObjects.IOS;
 
-import com.Framework.IOSBase;
-import io.appium.java_client.ios.IOSDriver;
+import com.Framework.Base.IOSBase;
 import org.openqa.selenium.WebElement;
 
-import java.io.IOException;
 import java.net.MalformedURLException;
 
 public class AppHomePageObjects extends IOSBase {

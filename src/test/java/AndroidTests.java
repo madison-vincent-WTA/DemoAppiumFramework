@@ -1,13 +1,8 @@
 import java.io.IOException;
 import java.net.MalformedURLException;
-
-import com.Framework.AndroidBase;
-import io.appium.java_client.android.nativekey.AndroidKey;
-import io.appium.java_client.android.nativekey.KeyEvent;
+import com.Framework.Base.AndroidBase;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.*;
-import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.android.AndroidElement;
 import pageObjects.Android.AppHomePageObjects;
 
 @Listeners(com.Framework.Listeners.Listeners.class)
@@ -23,10 +18,6 @@ public class AndroidTests extends AndroidBase {
         //Starting the Appium server if it is not already running
         service=startServer();
         //TODO change this to BeforeSuite?
-        //Initializing the driver and supplying the application name
-        AndroidDriver<AndroidElement> driver=capabilities();
-        //TODO: Should this be removed from the base if it lives in the beforeTest? Or should the beforeTest itself be moved to Base?
-
         // TODO adding an afterTest (?) that also stops the server via lesson 105.. Thinking it needs to
         //  be in base if possible
         // TODO adding closing and opening the emulator to the before and after tests as well via lesson 105?
@@ -54,7 +45,7 @@ public class AndroidTests extends AndroidBase {
         //If the assertion fails it will print "Assertion: Checking animation button text <FAILED> "
         softAssert.assertEquals(android.getButtonText(desc), buttonText, message);
         //Pressing the "back" button on the device to return to the home screen
-        driver.pressKey(new KeyEvent(AndroidKey.BACK));
+        driver.navigate().back();
         //TODO: Creating this as an AfterTest to ensure we don't cause issues with screenshots
 
         //Causes an exception to be thrown if any assertions fail, failing the test and printing information on the failure

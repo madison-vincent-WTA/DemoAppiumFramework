@@ -1,6 +1,7 @@
 package com.Framework.Listeners;
 
-import com.Framework.AndroidBase;
+import com.Framework.Base.AndroidBase;
+import com.Framework.Base.IOSBase;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
@@ -30,7 +31,7 @@ public class Listeners implements ITestListener {
 		System.out.println("***** Test: "+result.getName()+" has failed *****");
 		try {
 			AndroidBase.getScreenshot(result.getName());
-			//TODO how to make this non specific to ios or android?
+			//TODO how to make this non specific to ios or android? right now it only screenshots the android phone
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

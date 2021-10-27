@@ -1,4 +1,4 @@
-package com.Framework;
+package com.Framework.Base;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -10,6 +10,7 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import com.Framework.Listeners.AssertionLogging;
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
@@ -26,12 +27,24 @@ import org.testng.Reporter;
 
 public class AndroidBase {
     public static AppiumDriverLocalService service;
-    public static AndroidDriver<AndroidElement> driver;
+    public static AppiumDriver driver;
+
+    static {
+        try {
+            driver = capabilities();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+    //TODO another place that this is initialized redundantly..
+
     public static AssertionLogging softAssert = new AssertionLogging();
 
     //This is where we set up Appium to run tests. Driver, Automation Environment, Device, App, etc.
 
-    public static  AndroidDriver<AndroidElement> capabilities() throws IOException, InterruptedException {
+    public static AppiumDriver capabilities() throws IOException, InterruptedException {
         // Creates a FileInputStream by opening a connection to an actual file, the file named by the path name in the file system
         //This defines where our Global Properties live, which we will reference in the code that follows
         FileInputStream fis=new FileInputStream(System.getProperty("user.dir")+"/src/main/java/com/Framework/global.properties");
@@ -57,14 +70,15 @@ public class AndroidBase {
         capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME,"uiautomator2");
         //Telling Appium where to find the application for testing
         capabilities.setCapability(MobileCapabilityType.APP, app.getAbsolutePath());
-
+        //Providing platform name
+        capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
         //This defines how long Appium should wait for a new command from the client before assuming the client ended the session
         //Set to 0 to disable the timeout, but this isn't recommended as it allows automation sessions to continue indefinitely
         capabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT,30);
 
         //Setting up the driver
         String address=(String) prop.get("IP");
-        driver = new AndroidDriver<>(new URL(address), capabilities);
+        driver = new AppiumDriver(new URL(address), capabilities);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         return driver;
     }

@@ -1,4 +1,4 @@
-package com.Framework;
+package com.Framework.Base;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -8,6 +8,7 @@ import java.net.URL;
 import java.time.Duration;
 import java.util.Properties;
 import com.Framework.Listeners.AssertionLogging;
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
@@ -25,11 +26,14 @@ import org.testng.Reporter;
 
 public class IOSBase {
     public static AppiumDriverLocalService service;
-    public static IOSDriver  driver;
+    public static AppiumDriver  driver;
+
+    //TODO fix this above
+
     public static AssertionLogging softAssert = new AssertionLogging();
     public static DesiredCapabilities capabilities = new DesiredCapabilities();
 
-    public static IOSDriver DesiredCapabilities() throws IOException {
+    public static AppiumDriver capabilities() throws IOException {
 
         // Creates a FileInputStream by opening a connection to an actual file, the file named by the path name in the file system
         FileInputStream fis=new FileInputStream(System.getProperty("user.dir")+"/src/main/java/com/Framework/global.properties");
@@ -63,7 +67,7 @@ public class IOSBase {
 
         //Setting up the driver
         String address=(String) prop.get("IP");
-        IOSDriver driver = new IOSDriver<>(new URL(address), capabilities);
+        AppiumDriver driver = new IOSDriver<>(new URL(address), capabilities);
         return driver;
     }
 
@@ -150,8 +154,4 @@ public class IOSBase {
         return element;
     }
 
-    public static IOSDriver getDriver() throws IOException {
-        driver = IOSBase.DesiredCapabilities();
-        return driver;
-    }
 }
