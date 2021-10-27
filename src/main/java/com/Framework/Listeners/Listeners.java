@@ -1,7 +1,6 @@
 package com.Framework.Listeners;
 
 import com.Framework.AndroidBase;
-import com.Framework.Base;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
@@ -30,7 +29,8 @@ public class Listeners implements ITestListener {
 	public void onTestFailure(ITestResult result) {
 		System.out.println("***** Test: "+result.getName()+" has failed *****");
 		try {
-			Base.getScreenshot(result.getName());
+			AndroidBase.getScreenshot(result.getName());
+			//TODO how to make this non specific to ios or android?
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

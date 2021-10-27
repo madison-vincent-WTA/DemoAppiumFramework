@@ -1,22 +1,21 @@
 package pageObjects.Browser;
 
-import com.Framework.BrowserBase;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+import com.Framework.AndroidBrowserBase;
+import com.Framework.iOSBrowserBase;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.asserts.SoftAssert;
 
 import java.net.MalformedURLException;
 
-public class LandingPageObjects extends BrowserBase {
+public class iOSPageObjects extends iOSBrowserBase {
 
     public static WebElement getHomeButton() throws MalformedURLException {
+        //Providing the xpath as a string
         String xpath = "//icon[@class='nav-logo lazy-loaded']";
+        //Waiting for the presence of the desired element
         waitForElement(driver.findElementByXPath(xpath), 10, 1);
+        //Creating a Web Element object to return
         WebElement homeButton = driver.findElementByXPath(xpath);
+        //Returning the web element for use in testing
         return homeButton;
     }
 
