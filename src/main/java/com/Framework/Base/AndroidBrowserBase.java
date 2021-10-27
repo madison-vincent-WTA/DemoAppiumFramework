@@ -2,15 +2,12 @@ package com.Framework.Base;
 
 import com.Framework.Listeners.AssertionLogging;
 import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.remote.MobileCapabilityType;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
-
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.URL;
@@ -54,8 +51,7 @@ public class AndroidBrowserBase {
         //Telling Appium which browser we are using for testing
         capabilities.setCapability(MobileCapabilityType.BROWSER_NAME, browserName);
         //Providing the capability name we are setting (Chrome Driver Executable ) as well as the file path to the chrome driver
-        //TODO remove browser name?
-        //TODO Other browsers on both mobile and regular desktop
+        //TODO Other browsers on both mobile and regular desktop // 'Safari' for iOS and 'Chrome', 'Chromium', or 'Browser' for Android
         capabilities.setCapability("chromedriverExecutable","/Users/madison.vincent/IdeaProjects/DemoFramework/src/main/resources/chromedriver");
         //Providing platform name
         capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
