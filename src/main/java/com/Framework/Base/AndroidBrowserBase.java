@@ -12,6 +12,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.URL;
 import java.time.Duration;
+import java.util.Objects;
 import java.util.Properties;
 
 public class AndroidBrowserBase {
@@ -46,18 +47,26 @@ public class AndroidBrowserBase {
         capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, device);
         //Telling Appium that we are using Android Studio UI Automator to access the browser and run test automation on the app
         capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME,"uiautomator2");
-        //Telling Appium which browser we are using for testing
-        //capabilities.setCapability(MobileCapabilityType.BROWSER_NAME, "Chrome");
         //Providing the capability name we are setting (Chrome Driver Executable ) as well as the file path to the chrome driver
         capabilities.setCapability("chromedriverExecutable","/Users/madison.vincent/IdeaProjects/DemoFramework/src/main/resources/chromedriver");
         //Providing platform name
         capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
+        //Telling Appium not to re-install the browser app every time we test
         capabilities.setCapability(MobileCapabilityType.NO_RESET, true);
 
-        //EXPERIEMNTAL
-        capabilities.setCapability("appPackage","com.sec.android.app.sbrowser");
-        capabilities.setCapability("appActivity","com.sec.android.app.sbrowser.SBrowserMainActivity");
-//TODO testing on samsung internet capabilities
+        //Getting the mobile browser property from Global Properties and saving it to a string
+        String mobileBrowser =(String) prop.get("mobileBrowser");
+        //Telling Appium which browser we are using for testing
+        if (Objects.equals(mobileBrowser, "Samsung")) {
+            //This sets up Samsung Internet Browser
+            capabilities.setCapability("appPackage", "com.sec.android.app.sbrowser");
+            capabilities.setCapability("appActivity", "com.sec.android.app.sbrowser.SBrowserMainActivity");
+        } else if (Objects.equals(mobileBrowser, "Chrome")){
+            //This sets up Chrome
+            capabilities.setCapability(MobileCapabilityType.BROWSER_NAME, "Chrome");
+        }
+        //TODO testing on samsung internet capabilities
+
         //Setting up the driver
         String address=(String) prop.get("IP");
         driver = new AppiumDriver(new URL(address), capabilities);

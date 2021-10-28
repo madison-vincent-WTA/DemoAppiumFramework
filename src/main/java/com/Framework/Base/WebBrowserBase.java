@@ -2,8 +2,13 @@ package com.Framework.Base;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.safari.SafariDriver;
+
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.Objects;
 import java.util.Properties;
 
 public class WebBrowserBase {
@@ -15,24 +20,25 @@ public class WebBrowserBase {
         Properties prop = new Properties();
         //Reads a property list (key and element pairs) from the input stream.
         prop.load(fis);
+        WebDriver driver = null;
+
         String property = (String) prop.get("property");
         String driverDir = (String) prop.get("driverDir");
-        System.setProperty(property, driverDir);
 
-        WebDriver driver = new ChromeDriver();
-//        WebDriver driver = new FirefoxDriver();
-//        WebDriver driver = new SafariDriver();
-//        WebDriver driver = new EdgeDriver();
-
-//        if (property == "webdriver.chrome.driver") {
-//            driver = new ChromeDriver();
-//        } else if (property == "webdriver.gecko.driver") {
-//                driver = new FirefoxDriver();
-//            } else {
-//                    driver = new SafariDriver();
-//                }
-        //TODO fix the above web driver logic... not working after adding if/else statements
+        if (Objects.equals(property, "webdriver.chrome.driver")) {
+            System.setProperty(property, driverDir);
+            driver = new ChromeDriver();
+        } else if (Objects.equals(property, "webdriver.gecko.driver")) {
+            System.setProperty(property, driverDir);
+            driver = new FirefoxDriver();
+            } else if (Objects.equals(property, "webdriver.safari.driver")) {
+            driver = new SafariDriver();
+                } else if (Objects.equals(property, "webdriver.edge.driver")){
+            System.setProperty(property, driverDir);
+            driver = new EdgeDriver();
+        }
         //TODO separate testng.xml for webdriver versus mobile
+        //TODO additional commentary
 return driver;
     }
 }

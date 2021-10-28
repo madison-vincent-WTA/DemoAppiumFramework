@@ -23,7 +23,7 @@ public class AndroidBrowserTests extends AndroidBrowserBase {
 //TODO test description and general consistency
         //Allowing the browser to open
         Thread.sleep(5000);
-        // Telling the driver to navigate to a specific URL=
+        // Telling the driver to navigate to a specific URL
        driver.get("https://linkedin.com");
        //TODO: Context switching when the app supplies it's own URL or redirects to a browser
         // Using page objects to identify an element and click on that element
