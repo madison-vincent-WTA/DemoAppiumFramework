@@ -21,6 +21,8 @@ public class AndroidBrowserTests extends AndroidBrowserBase {
     @Test (dataProvider= "BrowserTestData")
     public void checkWelcomeMessage(String expected) throws IOException, InterruptedException {
 //TODO test description and general consistency
+        //Allowing the browser to open
+        Thread.sleep(5000);
         // Telling the driver to navigate to a specific URL=
        driver.get("https://linkedin.com");
        //TODO: Context switching when the app supplies it's own URL or redirects to a browser
@@ -33,6 +35,7 @@ public class AndroidBrowserTests extends AndroidBrowserBase {
         //This should be included in any method that contains assertions. SoftAssert is preferred over regular assertions
         softAssert.assertAll();
     }
+    //TODO adding Samsung Internet Browser capability - was getting errors that it was not on the emulator
 
     @DataProvider(name="BrowserTestData")
     public static Object[][] getWelcomeMessage()

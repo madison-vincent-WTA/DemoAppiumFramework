@@ -32,10 +32,8 @@ public class iOSBrowserBase extends IOSBase {
         capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, device);
         //Telling Appium that we are using Android Studio UI Automator to access the browser and run test automation on the app
         capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME,"XCUITest");
-        //Retrieving the browser name from the Global Properties and storing it
-        String browserName =(String) prop.get("iOSBrowserName");
         //Telling Appium which browser we are using for testing
-        capabilities.setCapability(MobileCapabilityType.BROWSER_NAME, browserName);
+        capabilities.setCapability(MobileCapabilityType.BROWSER_NAME, "Safari");
         //Providing platform name and version (Maybe not needed?)
         capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "iOS");
         //Getting the UDID value from global properties and storing it as a property

@@ -46,16 +46,18 @@ public class AndroidBrowserBase {
         capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, device);
         //Telling Appium that we are using Android Studio UI Automator to access the browser and run test automation on the app
         capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME,"uiautomator2");
-        //Retrieving the browser name from the Global Properties and storing it
-        String browserName =(String) prop.get("androidBrowserName");
         //Telling Appium which browser we are using for testing
-        capabilities.setCapability(MobileCapabilityType.BROWSER_NAME, browserName);
+        //capabilities.setCapability(MobileCapabilityType.BROWSER_NAME, "Chrome");
         //Providing the capability name we are setting (Chrome Driver Executable ) as well as the file path to the chrome driver
-        //TODO Other browsers on both mobile and regular desktop // 'Safari' for iOS and 'Chrome', 'Chromium', or 'Browser' for Android
         capabilities.setCapability("chromedriverExecutable","/Users/madison.vincent/IdeaProjects/DemoFramework/src/main/resources/chromedriver");
         //Providing platform name
         capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
+        capabilities.setCapability(MobileCapabilityType.NO_RESET, true);
 
+        //EXPERIEMNTAL
+        capabilities.setCapability("appPackage","com.sec.android.app.sbrowser");
+        capabilities.setCapability("appActivity","com.sec.android.app.sbrowser.SBrowserMainActivity");
+//TODO testing on samsung internet capabilities
         //Setting up the driver
         String address=(String) prop.get("IP");
         driver = new AppiumDriver(new URL(address), capabilities);
