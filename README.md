@@ -31,11 +31,24 @@ Note: a great guide on Git exists at https://rogerdudler.github.io/git-guide/
  8. The code should be in place, as a check you can ensure that classes exist in src>main>java>com.Framework>Base
  9. Right click on the pom.xml > Maven > Reload Project
  10. Naviage to src>main>java>com.Framework>global.properties and open the file 
- 11. Follow the provided instructions to update the fields where needed. e.g. provide your project name, IP address, etc.
- 12. You can replace the app files with your desired files and update the app file names in Global Properties accordingly
- 13.  ****** CREATE TESTNG FILE ****************
+ 11. Follow the provided instructions to update the fields where needed. The list of customizable fields is below:
+    a. Project Name (Used for saving screenshots and reports to the right location)
+    b. IP (Your IP Address is required to initialize the drivers and interact with appium)
+    c. App Directory (Where the apps are located in the project)
+    d. Webdriver Properties (Defining which browser you want to use for testing and the path to the driver)
+    e. Android Device (Name of the device you want to use in Android Studio uiautomatoor)
+    f. Android App (Name of the app you want to use for Android Automation
+    g. mobileBrowser (The name of the browser you want to use for Android)
+    h. iOS Device (The name of the device you want to use in Xcode XCUITest)
+    i. UDID (The ID of the iOS device you want to use)
+    j. iOS App (The name of the app that you want to use for iOS) 
+ 12. You can replace the app files with your desired files and update the app file names in Global Properties accordingly.
 
-## Usage
+## Usage\
+
+### Writing Tests
+
+Note: Android's uiautomatorviewer typically does not work with the Appium server running. Stop the server before opening uiautomatorviewer
 
 ### Running Tests
 
@@ -43,7 +56,8 @@ Note: a great guide on Git exists at https://rogerdudler.github.io/git-guide/
 2. Open the simulator/emulator in both locations. They must be open for Appium to recognize them. If a physical device is plugged in it will likely use that, but the global properties file may still need to be updated to include the right device name and id
 3. Ensure the Appium server is running
 4. You should now be able to run tests. It should default to running using TestNG. 
-5. Test output will appear in the IDE as well as the Appium Server logs. 
+   a. You can run tests by right clicking the class and selecting "Run" or by right clicking the "testng.xml" file and clicking "run". The testng file will executes all tests as detailed within the file. This is the best way to execute your entire suite of tests as well as particular groups, packages, classes etc. 
+6. Test output will appear in the IDE as well as the Appium Server logs. 
 
 ### Test Reports
 
