@@ -44,7 +44,7 @@ Note: a great guide on Git exists at https://rogerdudler.github.io/git-guide/
     j. iOS App (The name of the app that you want to use for iOS) <br>
  12. You can replace the app files with your desired files and update the app file names in Global Properties accordingly.
 
-## Usage\
+## Usage
 
 ### Writing Tests
 
