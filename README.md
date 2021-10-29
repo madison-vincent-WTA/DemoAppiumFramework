@@ -28,9 +28,37 @@ Note: a great guide on Git exists at https://rogerdudler.github.io/git-guide/
 7. Switch to the repo branch you want to view/work in. Run the following command (Replace baseFramework with testingFramework to checkout the branch with example tests):
  git checkout baseFramework
  git pull baseFramework
- 8. The code should be in place
+ 8. The code should be in place, as a check you can ensure that classes exist in src>main>java>com.Framework>Base
+ 9. Right click on the pom.xml > Maven > Reload Project
+ 10. Naviage to src>main>java>com.Framework>global.properties and open the file 
+ 11. Follow the provided instructions to update the fields where needed. e.g. provide your project name, IP address, etc.
+ 12. You can replace the app files with your desired files and update the app file names in Global Properties accordingly
+ 13.  ****** CREATE TESTNG FILE ****************
 
 ## Usage
+
+### Running Tests
+
+1. Ensure Android Studio and Xcode are open. 
+2. Open the simulator/emulator in both locations. They must be open for Appium to recognize them. If a physical device is plugged in it will likely use that, but the global properties file may still need to be updated to include the right device name and id
+3. Ensure the Appium server is running
+4. You should now be able to run tests. It should default to running using TestNG. 
+5. Test output will appear in the IDE as well as the Appium Server logs. 
+
+### Test Reports
+
+Several reports will be generated automatically once tests have been ran that have failed/passed. They can be access by right clicking the report > Open In > Browser > Select browser. They are found at the following locations:
+
+Emailable Report: Detailed report with screenshots
+test-output > emailable-report.html
+
+Basic Report: Simple overall report without screenshots
+test-output > index.html
+
+ExtentReport: Visually pleasing and includes graphs, dashboard etc
+test-output > Reports > htmlreport.html
+
+I would recommend the Emailable Report when debugging as it includes the most detail as well as screenshots captured upon failed assertions
 
 ## Contributing
 
