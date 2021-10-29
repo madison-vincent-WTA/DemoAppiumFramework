@@ -2,9 +2,9 @@
 
 The project contains a framework for running Appium. The baseFramework branch contains a mostly blank framework with 1 example test in each platform. The testingFramework branch contains more detailed testing examples to work from. Both contain detailed comments throughout the code. 
 
+The Framework was made using IntelliJ on MacOS, so file path's mentioned in code may need to be adjusted
+
 ## Installation
-
-
 
 ### Requirements:
 
@@ -15,6 +15,20 @@ The project contains a framework for running Appium. The baseFramework branch co
 4. XCode Installation (set up your preferred simulator)
 5. Android Studio Installation (set up your preferred emulator)
 6. If doing testing on desktop browsers, insure they are installed. Safari will require you to allow automation within the developer menu (enabled in advanced settings)
+
+### Steps
+
+Note: a great guide on Git exists at https://rogerdudler.github.io/git-guide/
+
+1. Create a new repository in github for your project
+2. Navigate to the repository. The page should be focused on Quick Setup and the bottom section should say "...or import code from another repository". Click "Import Code"
+3. Paste in https://github.com/madison-vincent/DemoAppiumFramework.git and click "Begin Import"
+5. The new repository should now be a copy of the Demo framework
+6. Open the IDE and create a new project based on a Verified Code Source (Get form VCS on IntelliJ). Provide the URL to your new repository
+7. Switch to the repo branch you want to view/work in. Run the following command (Replace baseFramework with testingFramework to checkout the branch with example tests):
+ git checkout baseFramework
+ git pull baseFramework
+ 8. The code should be in place
 
 ## Usage
 
