@@ -6,7 +6,7 @@ The project contains a framework for running Appium. The baseFramework branch co
 
 
 
-# Requirements:
+### Requirements:
 
 1. Typical IntelliJ setup for TestNG including Java, Maven, Selenium, TestNG, Node.js (dependencies should already be in the pom.xml file) etc.
     a. Currently the pom.xml file uses the following versions: Appium 7.5.1, Selenium 3.141.59, TestNG 7.4.0, Maven Surefire 3.0.0-M5
