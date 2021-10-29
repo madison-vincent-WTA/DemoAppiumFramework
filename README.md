@@ -54,10 +54,10 @@ If you plan on testing in browsers (NOT Web Views) or on dekstop browser, take t
 1. Locate the drivers within the project at src/main/resources
 2. We need to check that we have the right drivers for the browsers we will be testing on. You should check the version of the browser you are using and then check that you are using the right driver version for that browser. Repeat this for all browsers you plan on testing with.
 3. Some examples are included below, as of October/2021 I am using the following browser and driver versions: <br>
-    a. "chromedriver web 93" is the chromedriver for desktop. It is currently version 93 and works with Chrome browser version 93.
-    b. "chromedriver 83" is the chromedriver for Android. It is currently version 83 and works with Chrome browser version 83
-    c. "geckodriver 30" is the driver for Firefox on Desktop. It is currently version 30 and support Firefox Browser version 93
-    d. "msedgedriver 95" is the driver for Edge on Desktop. It is currently version 95 and supports Edge browser version 95
+    a. "chromedriver web 93" is the chromedriver for desktop. It is currently version 93 and works with Chrome browser version 93. <br>
+    b. "chromedriver 83" is the chromedriver for Android. It is currently version 83 and works with Chrome browser version 83 <br>
+    c. "geckodriver 30" is the driver for Firefox on Desktop. It is currently version 30 and support Firefox Browser version 93 <br>
+    d. "msedgedriver 95" is the driver for Edge on Desktop. It is currently version 95 and supports Edge browser version 95 <br>
     e. Safari does not require a driver at this time, for desktop or mobile
 3. If you need to change the driver to match a newer version of your browser, simply replace the old driver with the new one. 
 4. Dont forget to update the driver name in Global Properties (and location/path if it was changed)
