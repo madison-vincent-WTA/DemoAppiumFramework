@@ -8,8 +8,8 @@ The Framework was made using IntelliJ on MacOS, so file path's mentioned in code
 
 ### Requirements:
 
-1. Typical IntelliJ setup for TestNG including Java, Maven, Selenium, TestNG, Node.js (dependencies should already be in the pom.xml file) etc.
-    a. Currently the pom.xml file uses the following versions: Appium 7.5.1, Selenium 3.141.59, TestNG 7.4.0, Maven Surefire 3.0.0-M5
+1. Typical IntelliJ setup for TestNG including Java, Maven, Selenium, TestNG, Node.js (dependencies should already be in the pom.xml file) etc. <br>
+    a. Currently the pom.xml file uses the following versions: Appium 7.5.1, Selenium 3.141.59, TestNG 7.4.0, Maven Surefire 3.0.0-M5 <br>
     b. If you have newer versions, update the version numbers in the pom.xml. Then right click on the pom.xml > Maven > Reload Project to load the dependencies 
 3. Appium installation - I recommend the desktop client
 4. XCode Installation (set up your preferred simulator)
@@ -25,8 +25,8 @@ Note: a great guide on Git exists at https://rogerdudler.github.io/git-guide/
 3. Paste in https://github.com/madison-vincent/DemoAppiumFramework.git and click "Begin Import"
 5. The new repository should now be a copy of the Demo framework
 6. Open the IDE and create a new project based on a Verified Code Source (Get form VCS on IntelliJ). Provide the URL to your new repository
-7. Switch to the repo branch you want to view/work in. Run the following command (Replace baseFramework with testingFramework to checkout the branch with example tests):
- git checkout baseFramework
+7. Switch to the repo branch you want to view/work in. Run the following command (Replace baseFramework with testingFramework to checkout the branch with example tests): <br>
+ git checkout baseFramework <br>
  git pull baseFramework
  8. The code should be in place, as a check you can ensure that classes exist in src>main>java>com.Framework>Base
  9. Right click on the pom.xml > Maven > Reload Project
