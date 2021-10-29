@@ -13,7 +13,7 @@ The Framework was made using IntelliJ on MacOS, so file path's mentioned in code
     b. If you have newer versions, update the version numbers in the pom.xml. Then right click on the pom.xml > Maven > Reload Project to load the dependencies 
 2. Appium installation - I recommend the desktop client
 3. XCode Installation (set up your preferred simulator)
-4. Android Studio Installation (set up your preferred emulator)
+4. Android Studio Installation (set up your preferred emulator, I recommend one that has access to the Play Store and therefore Chrome)
 5. If doing testing on desktop browsers, insure they are installed. Safari will require you to allow automation within the developer menu (enabled in advanced settings)
 
 ### Creating your own repo with the code
