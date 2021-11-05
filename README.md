@@ -1,5 +1,7 @@
 # Appium Framework
 
+This README file is currently *Incomplete*
+
 The project contains a framework for running Appium. The baseFramework branch contains a mostly blank framework with 1 example test in each platform. The testingFramework branch contains more detailed testing examples to work from. Both contain detailed comments throughout the code. 
 
 The Framework was made using IntelliJ on MacOS, so file path's mentioned in code may need to be adjusted
