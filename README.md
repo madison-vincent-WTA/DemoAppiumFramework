@@ -70,6 +70,10 @@ If you plan on testing in browsers (NOT Web Views) or on dekstop browser, take t
 
 Note: Android's uiautomatorviewer typically does not work with the Appium server running. Stop the server before opening uiautomatorviewer
 
+WEBVIEW on Android:
+To identify the xpath for objects in a WebView, you will need to use remote debugging as uiautomatorviewer will not recognize elements in a WebView. Setup:
+https://developer.chrome.com/docs/devtools/remote-debugging/
+
 ### Running Tests
 
 1. Ensure Android Studio and Xcode are open. 
